@@ -1,0 +1,137 @@
+:root {
+  --black: #121212;
+  --white: #ffffff;
+  --gray: #2a2a2a;
+  --light-gray: #3a3a3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  text-align: center;
+  width: 300px;
+  padding: 2rem;
+}
+
+.timer-display {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -0.25rem;
+  margin: 1.5rem 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+button {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mode-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.mode-btn {
+  opacity: 0.5;
+  border: none;
+}
+
+.mode-btn.active {
+  opacity: 1;
+  background: var(--white);
+  color: var(--black);
+}
+
+.settings {
+  margin: 2rem 0;
+  border-top: 1px solid var(--gray);
+  padding-top: 1.5rem;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.setting label {
+  opacity: 0.8;
+}
+
+input[type="range"] {
+  width: 100px;
+  height: 2px;
+  background: var(--light-gray);
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--white);
+  border-radius: 2px;
+  position: relative;
+  margin-right: 0.5rem;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: -1px;
+  left: 2px;
+  font-size: 12px;
+}
+
+.counter {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  letter-spacing: 0.03rem;
+}
