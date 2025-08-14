@@ -17,13 +17,14 @@ document
   .getElementById("auto-start-toggle")
   .addEventListener("change", function () {
     autoStartEnabled = this.checked;
-    localStorage.setItem("autoStartEnabled");
+    localStorage.setItem("autoStartEnabled", autoStartEnabled);
   });
 
 // Timer
 let timer;
 let isRunning = false;
 let timeLeft = 25 * 60;
+
 let currentMode = "pomodoro";
 let pomodoroCount = 0;
 let autoStartEnabled = localStorage.getItem("autoStartEnabled") !== "false";
@@ -144,7 +145,7 @@ function switchMode(mode) {
 }
 
 function playAlarm() {
-  const volumeControl = document.getElementById("volume");
+  const volumeControl = document.getElementById("whitenoise-volume");
   const volume = parseFloat(volumeControl.value);
 
   const audio = new Audio("./assets/30-seconds.mp3");
@@ -158,7 +159,7 @@ function playAlarm() {
 
 function fallbackBeep() {
   // Simple browser beep fallback
-  const ctx = new (window.AudioContext)();
+  const ctx = new window.AudioContext();
   const oscillator = ctx.createOscillator();
   const gainNode = ctx.createGain();
 
