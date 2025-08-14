@@ -24,7 +24,6 @@ document
 let timer;
 let isRunning = false;
 let timeLeft = 25 * 60;
-
 let currentMode = "pomodoro";
 let pomodoroCount = 0;
 let autoStartEnabled = localStorage.getItem("autoStartEnabled") !== "false";
